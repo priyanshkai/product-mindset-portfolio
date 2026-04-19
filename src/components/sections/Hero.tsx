@@ -15,7 +15,7 @@ const Hero = () => {
             <span className="italic text-muted-foreground">aspiring product manager.</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-            {profile.tagline} I focus on user research, analytics, and crisp problem framing — turning ambiguity into shippable decisions.
+            {profile.tagline}
           </p>
           <div className="flex flex-wrap gap-3">
             <a
