@@ -65,7 +65,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Instrument Serif", "Georgia", "serif"],
+        display: ["Bricolage Grotesque", "Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
         soft: "var(--shadow-soft)",
