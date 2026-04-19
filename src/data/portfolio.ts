@@ -3,9 +3,9 @@ export const profile = {
   title: "Aspiring Product Manager",
   tagline: "I identify user pain points, translate them into product decisions, and build data-backed solutions that drive measurable impact.",
   bio: "Aspiring Product Manager who turns messy, real-world problems into structured, actionable product decisions. I focus on identifying leverage points, making clear trade-offs, and building solutions that balance user needs with business impact.",
-  email: "hello@example.com",
-  linkedin: "https://linkedin.com/in/yourhandle",
-  github: "https://github.com/yourhandle",
+  email: "priyanshkailabag77@gmail.com",
+  linkedin: "https://www.linkedin.com/in/priyansh-k-883b792a5/",
+  github: "https://github.com/priyanshkai",
 };
 
 export const skills = [
@@ -34,99 +34,73 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "improving-onboarding",
-    title: "Reducing Drop-off in SaaS Onboarding",
-    summary: "Redesigned a 5-step signup flow and lifted activation by 28% through progressive disclosure.",
-    context: "B2B SaaS · Growth Team",
-    duration: "6 weeks",
-    role: "Product (case study)",
-    problem:
-      "Free-trial users were dropping off at 47% during onboarding. Sales flagged that activated users converted 3× more, making onboarding the highest-leverage funnel to fix.",
-    approach: [
-      "Funnel analysis to pinpoint the steepest drop-off step",
-      "8 user interviews with churned trial users",
-      "Heuristic review of competitor onboarding flows",
-      "Hypothesis tree to prioritize 4 testable interventions",
-    ],
-    insights: [
-      "62% of churned users never reached the 'first value' moment",
-      "Users perceived the workspace setup as work, not value",
-      "Most users wanted to explore before committing data",
-    ],
-    solution:
-      "Replaced the linear setup with a sample-data sandbox, deferred workspace configuration, and added a single 'aha-moment' task surfaced on first login.",
-    tradeoffs: [
-      "Sample data risked confusion vs. real data — mitigated with a clear 'demo' badge",
-      "Skipping setup added technical debt for the data team — scoped as a 1-sprint follow-up",
-    ],
-    metrics: [
-      { label: "Activation rate", value: "+28%" },
-      { label: "Time to first value", value: "−54%" },
-      { label: "Trial-to-paid", value: "+11%" },
-    ],
-  },
-  {
-    slug: "checkout-redesign",
-    title: "Mobile Checkout: Cutting Cart Abandonment",
-    summary: "Identified friction in a 4-step mobile checkout and proposed a one-page flow validated with prototypes.",
-    context: "D2C E-commerce · Self-initiated teardown",
-    duration: "4 weeks",
-    role: "Product (case study)",
-    problem:
-      "A mid-market D2C brand had 71% cart abandonment on mobile vs. 58% on desktop. Most attempts to fix it focused on payment options, not the underlying flow.",
-    approach: [
-      "Session-replay review of 40 abandoned carts",
-      "Comparative teardown of 6 best-in-class checkouts",
-      "Quant survey of 120 shoppers on perceived friction",
-      "Prototype tested with 5 users via moderated sessions",
-    ],
-    insights: [
-      "Address entry caused 38% of mobile drop-offs",
-      "Users distrusted the order summary because totals updated late",
-      "Guest checkout was hidden behind a login wall",
-    ],
-    solution:
-      "Single-page checkout with autofill-first address, sticky order summary, and guest checkout as the default path. Login surfaced only post-purchase.",
-    tradeoffs: [
-      "Lower account creation rate — offset by post-purchase nudges",
-      "Engineering complexity for sticky summary on small viewports",
-    ],
-    metrics: [
-      { label: "Projected abandonment", value: "−14 pts" },
-      { label: "Tasks completed (usability)", value: "5/5" },
-      { label: "Avg. time to checkout", value: "−32%" },
-    ],
-  },
-  {
-    slug: "creator-retention",
-    title: "Improving Week-2 Retention for a Creator Tool",
-    summary: "Used cohort analysis to find a 'second-session gap' and proposed a habit-forming notification loop.",
-    context: "Consumer · Creator economy",
+    slug: "ai-carbon-intelligence",
+    title: "AI-Powered Carbon Intelligence for Infrastructure Planning",
+    summary:
+      "Designed an AI-driven decision-support system to enable early-stage carbon-aware planning using fast, explainable insights.",
+    context: "B2B · Infrastructure · AI Decision Support",
     duration: "5 weeks",
     role: "Product (case study)",
     problem:
-      "A creator tool had healthy day-1 sign-ups but only 19% W2 retention. Leadership wanted hypotheses before committing engineering capacity.",
+      "Infrastructure planners lack accessible tools to estimate embodied carbon during early project stages. Existing LCA tools are complex, require expertise, and are used too late—resulting in high-emission decisions being locked in early.",
     approach: [
-      "Cohort analysis by acquisition channel and persona",
-      "Built a retention curve and benchmarked against PMF heuristics",
-      "Mapped the user journey and identified the 'second session' as the key gap",
-      "Drafted RICE-prioritized intervention list",
+      "Applied JTBD framework to define core user need (early-stage decision support)",
+      "Analyzed current workflows in infrastructure planning (BOQ, material selection)",
+      "Evaluated existing solutions (LCA tools, manual methods) to identify gaps",
+      "Defined MVP scope and AI use cases focused on speed, usability, and explainability",
     ],
     insights: [
-      "Users who returned within 72h retained 4× better",
-      "No trigger existed to bring users back after first export",
-      "Top creators shared their work externally — a built-in loop was missing",
+      "Carbon decisions are made early, but tools are introduced too late",
+      "Users prioritize speed and simplicity over accuracy in planning stages",
+      "Complex tools discourage exploration of alternative materials",
+      "Explainability is critical for trust in AI-driven decisions",
     ],
     solution:
-      "Proposed a lightweight notification loop tied to publishing milestones, plus a 'share to socials' primitive that doubles as a re-engagement trigger.",
+      "Designed an AI-powered platform that generates carbon estimates from incomplete inputs, enables side-by-side comparison of materials and designs, provides plain-language explanations for decision-making, and allows export of insights for planning and approvals.",
     tradeoffs: [
-      "Notifications risk feeling spammy — mitigated with frequency caps",
-      "Social share primitive adds scope — phased as MVP first",
+      "Prioritized speed over accuracy — accepted directional insights instead of detailed LCA precision",
+      "Limited scope to planning-stage only — excluded full lifecycle modeling and compliance workflows",
+      "Avoided automation of decisions — kept system as decision-support, not decision-maker",
     ],
     metrics: [
-      { label: "W2 retention (target)", value: "+12 pts" },
-      { label: "Second-session rate", value: "+40%" },
-      { label: "Hypotheses prioritized", value: "11 → 3" },
+      { label: "Decision speed", value: "Faster" },
+      { label: "Early-stage coverage", value: "Planning-first" },
+      { label: "Explainability", value: "Plain-language" },
+    ],
+  },
+  {
+    slug: "ashraya-pg-platform",
+    title: "Ashraya — Smart PG Management Platform",
+    summary:
+      "Designed a centralized system to reduce daily friction in PG living by streamlining food, rent, and communication into a single platform.",
+    context: "Consumer · Operations · Experience",
+    duration: "4–5 weeks",
+    role: "Product (case study)",
+    problem:
+      "PG living is highly fragmented—food updates, rent tracking, and communication are handled across WhatsApp, manual processes, and informal systems. This creates daily friction, lack of transparency, and poor user experience for residents.",
+    approach: [
+      "Observed and mapped day-to-day PG workflows (food, rent, communication)",
+      "Identified repeated friction points through personal experience and peer inputs",
+      "Broke down the system into core user needs (visibility, communication, tracking)",
+      "Defined a simple MVP focused on solving high-frequency daily problems",
+    ],
+    insights: [
+      "The problem isn't lack of tools—it's fragmentation across multiple channels",
+      "Most issues occur daily, making small inefficiencies highly frustrating",
+      "Users value clarity and predictability more than feature richness",
+      "Communication gaps are a major source of dissatisfaction",
+    ],
+    solution:
+      "Designed a centralized platform that displays daily food menus and updates, tracks rent and payment status, enables direct communication with PG management, and provides a simple dashboard for daily visibility.",
+    tradeoffs: [
+      "Prioritized simplicity over feature depth — avoided adding complex automation early",
+      "Focused on residents as primary users — deferred owner-side complexity",
+      "Limited scope to core daily use cases — excluded advanced analytics and integrations",
+    ],
+    metrics: [
+      { label: "Daily visibility", value: "Improved" },
+      { label: "Communication gaps", value: "Reduced" },
+      { label: "Routine follow-ups", value: "Lower" },
     ],
   },
 ];
@@ -138,8 +112,8 @@ export const projects = [
     tag: "Teardown",
   },
   {
-    title: "E-commerce Funnel Dashboard",
-    desc: "Power BI dashboard tracking acquisition, activation, and retention with cohort views.",
+    title: "AI Carbon Intelligence App",
+    desc: "AI-powered decision-support tool for early-stage, carbon-aware infrastructure planning with explainable insights.",
     tag: "Dashboard",
   },
   {
@@ -148,29 +122,29 @@ export const projects = [
     tag: "PRD",
   },
   {
-    title: "Newsletter Growth Experiment",
-    desc: "8-week content experiment testing hooks, formats, and CTAs to grow a niche newsletter.",
+    title: "Ashraya — Smart PG Platform",
+    desc: "Centralized PG management experiment streamlining food, rent, and communication into one simple dashboard.",
     tag: "Experiment",
   },
 ];
 
 export const experience = [
   {
-    title: "Product Management Certification",
-    org: "Reforge / Coursera",
-    year: "2024",
-    desc: "Completed coursework on growth, retention, and product strategy frameworks.",
+    title: "Product Management with Agentic AI",
+    org: "BITS Pilani School of Management",
+    year: "2025 — 2026",
+    desc: "Coursework focused on product management practices augmented with agentic AI workflows and decision-support systems.",
   },
   {
-    title: "Data Analytics Internship",
-    org: "Company Name",
+    title: "Business Analyst",
+    org: "Cognizant",
     year: "2023",
-    desc: "Built dashboards and ran funnel analyses to support marketing decisions.",
+    desc: "Built dashboards and ran funnel analyses to support decision-making across business teams.",
   },
   {
-    title: "B.Tech / Bachelor's Degree",
-    org: "University Name",
+    title: "B.Tech in Technology",
+    org: "G H Raisoni University",
     year: "2020 — 2024",
-    desc: "Coursework in CS, statistics, and business fundamentals.",
+    desc: "Bachelor's in technology with coursework spanning CS fundamentals, statistics, and applied problem solving.",
   },
 ];
