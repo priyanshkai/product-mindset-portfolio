@@ -38,11 +38,11 @@ const Hero = () => {
           </div>
           <div className="fade-in-up justify-self-center md:justify-self-end">
             <div className="relative">
-              <div className="absolute -inset-4 bg-accent/10 rounded-full blur-2xl" />
+              <div className="absolute -inset-4 bg-accent/10 rounded-2xl blur-2xl" />
               <img
                 src={portrait}
                 alt={`${profile.name} — Aspiring Product Manager portrait`}
-                className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full object-cover border border-border shadow-xl"
+                className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-2xl object-cover border border-border shadow-xl"
                 loading="eager"
               />
             </div>
