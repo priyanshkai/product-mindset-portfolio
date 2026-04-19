@@ -1,4 +1,5 @@
 import { projects } from "@/data/portfolio";
+import { useReveal, revealClass, revealDelay } from "@/hooks/use-reveal";
 
 const palette = [
   {
@@ -31,33 +32,46 @@ const palette = [
   },
 ];
 
+const Header = () => {
+  const r = useReveal<HTMLDivElement>();
+  return (
+    <div ref={r.ref} className={`mb-12 ${revealClass(r.visible, "up")}`}>
+      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Projects</p>
+      <h2 className="font-display text-4xl md:text-5xl mt-3">Smaller experiments.</h2>
+    </div>
+  );
+};
+
+const ProjectCard = ({ p, i }: { p: typeof projects[number]; i: number }) => {
+  const r = useReveal<HTMLDivElement>();
+  const c = palette[i % palette.length];
+  const dir = i % 2 === 0 ? "left" : "right";
+  return (
+    <div
+      ref={r.ref}
+      style={revealDelay((i % 2) * 120)}
+      className={`group p-6 rounded-xl ${c.bg} ring-1 ${c.ring} hover:shadow-card hover:-translate-y-0.5 ${revealClass(r.visible, dir)}`}
+    >
+      <div className="flex items-center justify-between mb-4">
+        <span className={`text-xs px-2.5 py-1 rounded-full ${c.tagBg} ${c.tagText} font-medium`}>
+          {p.tag}
+        </span>
+      </div>
+      <h3 className={`font-medium text-lg mb-2 transition-colors ${c.hover}`}>{p.title}</h3>
+      <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+    </div>
+  );
+};
+
 const Projects = () => {
   return (
-    <section id="projects" className="section-padding border-t border-border">
+    <section id="projects" className="section-padding border-t border-border overflow-hidden">
       <div className="container-narrow">
-        <div className="mb-12">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Projects</p>
-          <h2 className="font-display text-4xl md:text-5xl mt-3">Smaller experiments.</h2>
-        </div>
-
+        <Header />
         <div className="grid sm:grid-cols-2 gap-4">
-          {projects.map((p, i) => {
-            const c = palette[i % palette.length];
-            return (
-              <div
-                key={p.title}
-                className={`group p-6 rounded-xl ${c.bg} ring-1 ${c.ring} hover:shadow-card transition-all hover:-translate-y-0.5`}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <span className={`text-xs px-2.5 py-1 rounded-full ${c.tagBg} ${c.tagText} font-medium`}>
-                    {p.tag}
-                  </span>
-                </div>
-                <h3 className={`font-medium text-lg mb-2 transition-colors ${c.hover}`}>{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-              </div>
-            );
-          })}
+          {projects.map((p, i) => (
+            <ProjectCard key={p.title} p={p} i={i} />
+          ))}
         </div>
       </div>
     </section>

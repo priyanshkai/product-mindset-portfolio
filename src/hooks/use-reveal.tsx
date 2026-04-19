@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 type Direction = "up" | "down" | "left" | "right" | "fade";
 
@@ -36,25 +36,22 @@ export const useReveal = <T extends HTMLElement = HTMLDivElement>(
   return { ref, visible };
 };
 
-export const revealClass = (
-  visible: boolean,
-  direction: Direction = "up",
-  delay = 0
-) => {
-  const base = "transition-all duration-700 ease-out will-change-transform";
-  const delayStyle = delay ? `[transition-delay:${delay}ms]` : "";
-  if (visible) return `${base} ${delayStyle} opacity-100 translate-x-0 translate-y-0`;
+export const revealClass = (visible: boolean, direction: Direction = "up") => {
+  const base = "transition-all duration-700 ease-out will-change-transform motion-reduce:transition-none motion-reduce:transform-none";
+  if (visible) return `${base} opacity-100 translate-x-0 translate-y-0`;
   switch (direction) {
     case "up":
-      return `${base} ${delayStyle} opacity-0 translate-y-10`;
+      return `${base} opacity-0 translate-y-10`;
     case "down":
-      return `${base} ${delayStyle} opacity-0 -translate-y-10`;
+      return `${base} opacity-0 -translate-y-10`;
     case "left":
-      return `${base} ${delayStyle} opacity-0 -translate-x-10`;
+      return `${base} opacity-0 -translate-x-10`;
     case "right":
-      return `${base} ${delayStyle} opacity-0 translate-x-10`;
+      return `${base} opacity-0 translate-x-10`;
     case "fade":
     default:
-      return `${base} ${delayStyle} opacity-0`;
+      return `${base} opacity-0`;
   }
 };
+
+export const revealDelay = (ms: number): CSSProperties => ({ transitionDelay: `${ms}ms` });
