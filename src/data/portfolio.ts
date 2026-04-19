@@ -9,10 +9,10 @@ export const profile = {
 };
 
 export const skills = [
-  { label: "Product Thinking", desc: "Problem framing, prioritization, roadmapping" },
-  { label: "Analytics", desc: "SQL, A/B testing, funnel analysis" },
-  { label: "User Research", desc: "Interviews, surveys, usability testing" },
-  { label: "Growth", desc: "Activation, retention, north-star metrics" },
+  { label: "Product Thinking", desc: "Problem framing, prioritization, roadmapping", icon: "Lightbulb", color: "amber" },
+  { label: "Analytics", desc: "SQL, A/B testing, funnel analysis", icon: "BarChart3", color: "blue" },
+  { label: "User Research", desc: "Interviews, surveys, usability testing", icon: "Users", color: "emerald" },
+  { label: "Growth", desc: "Activation, retention, north-star metrics", icon: "TrendingUp", color: "rose" },
 ];
 
 export const tools = ["Power BI", "Notion", "Figma", "Mixpanel", "SQL", "Jira", "Amplitude", "Excel"];
