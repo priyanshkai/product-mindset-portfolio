@@ -12,9 +12,9 @@ const Hero = () => {
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               Open to PM opportunities
             </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-6">
+            <h1 className="font-display font-semibold text-5xl md:text-7xl lg:text-8xl leading-[1.02] tracking-[-0.03em] mb-6">
               {profile.name},<br />
-              <span className="italic text-muted-foreground">aspiring product manager.</span>
+              <span className="font-light text-muted-foreground">aspiring product manager.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
               {profile.tagline}
