@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Your Name",
+  name: "Priyansh Kailabag",
   title: "Aspiring Product Manager",
   tagline: "I solve user problems with data-driven product decisions.",
   bio: "I'm an aspiring Product Manager passionate about building products that solve real user problems. I focus on the intersection of user research, data, and business strategy — translating ambiguity into clear, prioritized roadmaps. I enjoy breaking down complex problems, identifying leverage points, and shipping iteratively.",
