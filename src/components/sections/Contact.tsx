@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Mail, Linkedin, Github } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import { toast } from "sonner";
+import { useReveal, revealClass } from "@/hooks/use-reveal";
 
 const Contact = () => {
   const [sending, setSending] = useState(false);
+  const left = useReveal<HTMLDivElement>();
+  const right = useReveal<HTMLFormElement>();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,10 +20,10 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding border-t border-border">
+    <section id="contact" className="section-padding border-t border-border overflow-hidden">
       <div className="container-narrow">
         <div className="grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-5">
+          <div ref={left.ref} className={`md:col-span-5 ${revealClass(left.visible, "left")}`}>
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Contact</p>
             <h2 className="font-display text-4xl md:text-5xl mt-3">Let's talk product.</h2>
             <p className="text-muted-foreground mt-4 leading-relaxed">
@@ -39,7 +42,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <form onSubmit={onSubmit} className="md:col-span-7 space-y-4">
+          <form ref={right.ref} onSubmit={onSubmit} className={`md:col-span-7 space-y-4 ${revealClass(right.visible, "right")}`}>
             <div className="grid sm:grid-cols-2 gap-4">
               <input required name="name" placeholder="Name" className="px-4 py-3 rounded-lg border border-border bg-card focus:outline-none focus:ring-2 focus:ring-accent/30 transition" />
               <input required type="email" name="email" placeholder="Email" className="px-4 py-3 rounded-lg border border-border bg-card focus:outline-none focus:ring-2 focus:ring-accent/30 transition" />
