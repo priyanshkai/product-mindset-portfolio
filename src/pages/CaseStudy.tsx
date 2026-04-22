@@ -1,12 +1,8 @@
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { caseStudies } from "@/data/portfolio";
-
-const APP_LINKS: Record<string, string> = {
-  "ai-carbon-intelligence": "https://claude.ai/public/artifacts/43d108f1-4f47-450d-ae0b-2d2ea9104808",
-};
 
 const Block = ({ label, children }: { label: string; children: React.ReactNode }) => (
   <section className="grid md:grid-cols-12 gap-6 py-10 border-t border-border">

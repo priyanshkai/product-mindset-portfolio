@@ -1,11 +1,7 @@
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { caseStudies } from "@/data/portfolio";
 import { useReveal, revealClass, revealDelay } from "@/hooks/use-reveal";
-
-const APP_LINKS: Record<string, string> = {
-  "ai-carbon-intelligence": "https://claude.ai/public/artifacts/43d108f1-4f47-450d-ae0b-2d2ea9104808",
-};
 
 const Header = () => {
   const r = useReveal<HTMLDivElement>();
@@ -23,46 +19,32 @@ const Header = () => {
 };
 
 const CaseCard = ({ cs, i }: { cs: typeof caseStudies[number]; i: number }) => {
-  const r = useReveal<HTMLDivElement>();
+  const r = useReveal<HTMLAnchorElement>();
   const dir = i % 2 === 0 ? "left" : "right";
-  const appLink = APP_LINKS[cs.slug];
   return (
-    <div
+    <Link
       ref={r.ref}
+      to={`/case/${cs.slug}`}
       style={revealDelay(i * 120)}
-      className={`group bg-card border border-border rounded-2xl p-6 md:p-8 transition-all hover:shadow-card hover:-translate-y-0.5 ${revealClass(r.visible, dir)}`}
+      className={`group block bg-card border border-border rounded-2xl p-6 md:p-8 hover:shadow-card hover:-translate-y-0.5 transition-all ${revealClass(r.visible, dir)}`}
     >
       <div className="grid md:grid-cols-12 gap-6 items-start">
         <div className="md:col-span-1 text-sm text-muted-foreground font-mono">0{i + 1}</div>
-        <Link to={`/case/${cs.slug}`} className="md:col-span-8 block">
+        <div className="md:col-span-8">
           <p className="text-xs uppercase tracking-wider text-muted-foreground mb-2">{cs.context}</p>
           <h3 className="font-display text-2xl md:text-3xl leading-tight mb-2 group-hover:text-accent transition-colors">
             {cs.title}
           </h3>
           <p className="text-muted-foreground">{cs.summary}</p>
-        </Link>
-        <div className="md:col-span-3 flex flex-col gap-2 md:items-end">
-          <Link
-            to={`/case/${cs.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border border-border hover:bg-secondary transition-colors"
-          >
+        </div>
+        <div className="md:col-span-3 flex md:justify-end">
+          <div className="inline-flex items-center gap-2 text-sm font-medium">
             Read case
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </Link>
-          {appLink && (
-            <a
-              href={appLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-            >
-              Open Application
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          )}
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
