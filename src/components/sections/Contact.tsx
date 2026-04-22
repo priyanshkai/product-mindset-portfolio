@@ -12,11 +12,20 @@ const Contact = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") || "");
+    const email = String(data.get("email") || "");
+    const subject = String(data.get("subject") || "Hello from your portfolio");
+    const message = String(data.get("message") || "");
+    const body = `Hi Priyansh,%0D%0A%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0A— ${encodeURIComponent(name)} (${encodeURIComponent(email)})`;
+    const mailto = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailto;
     setTimeout(() => {
       setSending(false);
-      toast.success("Thanks — I'll get back to you soon.");
-      (e.target as HTMLFormElement).reset();
-    }, 600);
+      toast.success("Opening your email app…");
+      form.reset();
+    }, 400);
   };
 
   return (

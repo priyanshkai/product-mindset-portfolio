@@ -5,7 +5,7 @@ type Direction = "up" | "down" | "left" | "right" | "fade";
 export const useReveal = <T extends HTMLElement = HTMLDivElement>(
   options: { threshold?: number; rootMargin?: string; once?: boolean } = {}
 ) => {
-  const { threshold = 0.15, rootMargin = "0px 0px -10% 0px", once = true } = options;
+  const { threshold = 0.05, rootMargin = "0px 0px -5% 0px", once = true } = options;
   const ref = useRef<T | null>(null);
   const [visible, setVisible] = useState(false);
 

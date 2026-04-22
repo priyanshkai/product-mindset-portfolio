@@ -138,7 +138,7 @@ export const experience = [
   {
     title: "Business Analyst",
     org: "Cognizant",
-    year: "2023",
+    year: "2025 — 2026",
     desc: "Built dashboards and ran funnel analyses to support decision-making across business teams.",
   },
   {
