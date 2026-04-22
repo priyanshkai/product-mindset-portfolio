@@ -1,8 +1,12 @@
 import { Link, useParams, Navigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { caseStudies } from "@/data/portfolio";
+
+const APP_LINKS: Record<string, string> = {
+  "ai-carbon-intelligence": "https://claude.ai/public/artifacts/43d108f1-4f47-450d-ae0b-2d2ea9104808",
+};
 
 const Block = ({ label, children }: { label: string; children: React.ReactNode }) => (
   <section className="grid md:grid-cols-12 gap-6 py-10 border-t border-border">
@@ -30,6 +34,20 @@ const CaseStudy = () => {
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">{cs.context}</p>
           <h1 className="font-display text-4xl md:text-6xl leading-tight tracking-tight mb-6">{cs.title}</h1>
           <p className="text-lg text-muted-foreground max-w-3xl">{cs.summary}</p>
+
+          {APP_LINKS[cs.slug!] && (
+            <div className="mt-8">
+              <a
+                href={APP_LINKS[cs.slug!]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity text-sm font-medium"
+              >
+                Open Application
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          )}
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 pt-8 border-t border-border text-sm">
             <div>
